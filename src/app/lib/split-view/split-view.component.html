@@ -1,0 +1,23 @@
+
+<ng-container *ngTemplateOutlet="view; context: { viewData: data | async }"></ng-container>
+
+<ng-template #view let-data="viewData">
+    <as-split
+        [direction]="data.orientation"
+        [unit]="data.unit"
+        (dragStart)="dragging = true"
+        (dragEnd)="dragging = false"
+        [gutterSize]="data.disabled ? 0 : null"
+        [krDisableGutters]="data?.disabled"
+    >
+        <as-split-area
+            *ngFor="let id of data.components; let i = index"
+            [size]="data.sizes[i]"
+            [order]="i"
+            class="layout-area"
+        >
+            <div [hidden]="dragging === false" class="dragging-overlay"></div>
+            <ng-container *krComponentOutlet="id"></ng-container>
+        </as-split-area>
+    </as-split>
+</ng-template>
