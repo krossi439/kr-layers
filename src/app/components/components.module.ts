@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScreenComponent } from './screen/screen.component';
 import { BypassHrefSecurityPipe } from './bypass-href-security.pipe';

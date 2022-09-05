@@ -2,18 +2,15 @@ import { Action, createReducer, on, createFeatureSelector, createSelector } from
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { ComponentState } from './component-state.model';
 import * as ComponentStateActions from './component-state.actions';
+import { homePage } from 'src/app/app-layouts';
 
 export const componentStatesFeatureKey = 'componentStates';
 
-export interface State extends EntityState<ComponentState<any>> {
-  root: string
-}
+export interface State extends EntityState<ComponentState<any>> { }
 
 export const adapter: EntityAdapter<ComponentState<any>> = createEntityAdapter<ComponentState<any>>();
 
-export const initialState: State = adapter.getInitialState({
-  root: "layout-root"
-});
+export const initialState: State = adapter.getInitialState(homePage);
 
 export const reducer = createReducer(
   initialState,

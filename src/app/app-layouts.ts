@@ -265,19 +265,12 @@ export const homePage: ComponentState<any>[] = [
 export const quadPage: ComponentState<any>[] = [
     logoScreen,
     creditScreen,
+    datetimeScreen,
     {
         ...navScreen,
         data: {
             ...navScreen.data,
             selectedNav: 'QUAD'
-        }
-    },
-    {
-        ...datetimeScreen,
-        data: {
-            ...datetimeScreen.data,
-            containerStyle: {'margin': '0',"flex-direction": "column-reverse", "align-items": "center", "padding": "0"},
-            textStyle: {"font-size": "1.5em", "display": "flex", "padding": "0 20px"}
         }
     },
     {
