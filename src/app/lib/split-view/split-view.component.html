@@ -9,6 +9,7 @@
         (dragEnd)="dragging = false"
         [gutterSize]="data.disabled ? 0 : null"
         [krDisableGutters]="data?.disabled"
+        [krStyleGutters]="data?.gutterStyle"
     >
         <as-split-area
             *ngFor="let id of data.components; let i = index"

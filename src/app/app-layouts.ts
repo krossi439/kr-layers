@@ -177,8 +177,7 @@ export const aboutPage: ComponentState<any>[] = [
             orientation: 'vertical',
             unit: 'pixel',
             sizes: ['*', 375],
-            gutterStule: {'background': 'black'},
-            disabled: true
+            gutterStyle: {'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)'}
         }
     },
     {
@@ -189,8 +188,7 @@ export const aboutPage: ComponentState<any>[] = [
             orientation: 'horizontal',
             unit: 'pixel',
             sizes: [400, '*'],
-            gutterStule: {'background': 'black'},
-            disabled: true
+            gutterStyle: {'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)'}
         }
     },
     {

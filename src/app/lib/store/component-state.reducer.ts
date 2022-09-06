@@ -10,7 +10,14 @@ export interface State extends EntityState<ComponentState<any>> { }
 
 export const adapter: EntityAdapter<ComponentState<any>> = createEntityAdapter<ComponentState<any>>();
 
-export const initialState: State = adapter.getInitialState(homePage);
+const entities: {[k: string]: any} = {};
+
+homePage.forEach((c) => entities[c.id] = c);
+
+export const initialState: State = adapter.getInitialState({
+  ids: homePage.map((c) => c.id),
+  entities
+});
 
 export const reducer = createReducer(
   initialState,

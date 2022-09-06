@@ -7,13 +7,15 @@ import { SplitViewComponent } from './split-view/split-view.component';
 import { DisableGuttersDirective } from './directives/disable-gutters.directive';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/component-state.reducer';
+import { StyleGuttersDirective } from './directives/style-gutters.directive';
 
 @NgModule({
   declarations: [
     LayoutRootComponent,
     ComponentOutletDirective,
     SplitViewComponent,
-    DisableGuttersDirective
+    DisableGuttersDirective,
+    StyleGuttersDirective
   ],
   imports: [
     CommonModule,
