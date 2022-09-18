@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { registerComponent } from 'src/app/lib/register-component';
 
@@ -12,8 +12,7 @@ import { registerComponent } from 'src/app/lib/register-component';
   styleUrls: ['./code-pen.component.scss']
 })
 export class CodePenComponent implements OnInit {
-
-  data: Observable<string>
+  @Input() data: Observable<string>
 
   constructor() { }
 

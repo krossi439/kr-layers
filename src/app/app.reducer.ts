@@ -19,4 +19,4 @@ function localStorageSyncReducer(reducer: ActionReducer<State>): ActionReducer<S
   })(reducer);
 }
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [localStorageSyncReducer] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

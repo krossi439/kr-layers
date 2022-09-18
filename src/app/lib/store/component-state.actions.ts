@@ -2,6 +2,9 @@ import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 
 import { ComponentState } from './component-state.model';
+import { TypedAction } from '@ngrx/store/src/models';
+
+export const noopAction = createAction('NOOP');
 
 export const loadComponentStates = createAction(
   '[ComponentState/API] Load ComponentStates', 
@@ -51,3 +54,8 @@ export const deleteComponentStates = createAction(
 export const clearComponentStates = createAction(
   '[ComponentState/API] Clear ComponentStates'
 );
+
+export const closeSelf = createAction(
+  '[ComponentState/API]',
+  props<{ id: string }>()
+)

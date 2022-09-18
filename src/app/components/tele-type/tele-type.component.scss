@@ -1,0 +1,20 @@
+.container{
+    padding-top: 10px;
+} 
+
+span{
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    to{opacity: .0;}
+}
+
+.text {
+    font-size: 1.55em;
+    font-weight: bold;
+    left: 0;
+    filter: blur(3px);
+    color: #fff;
+    text-shadow: 1px 3px green, -2px -3px red;
+}

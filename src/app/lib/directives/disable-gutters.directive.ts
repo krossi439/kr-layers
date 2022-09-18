@@ -6,8 +6,8 @@ import { Subscription } from 'rxjs';
   selector: '[krDisableGutters]'
 })
 export class DisableGuttersDirective implements AfterViewInit, OnChanges {
-  @Input() set krDisableGutters(disabled: boolean) {
-    this.disabled = disabled;
+  @Input() set krDisableGutters(disabled: boolean | undefined) {
+    this.disabled = !!disabled;
   }
 
   disabled = false;
@@ -26,11 +26,7 @@ export class DisableGuttersDirective implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!(changes && changes['SimpleChanges'])) {
-      return;
-    }
-
-    const { previousValue, currentValue } = changes['SimpleChanges'];
+    const { previousValue, currentValue } = changes['krDisableGutters'];
 
     if (currentValue != previousValue) {
       this.setGutterStyle();

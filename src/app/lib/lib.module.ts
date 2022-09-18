@@ -8,6 +8,9 @@ import { DisableGuttersDirective } from './directives/disable-gutters.directive'
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/component-state.reducer';
 import { StyleGuttersDirective } from './directives/style-gutters.directive';
+import { EffectsModule } from '@ngrx/effects';
+import { LibEffects } from './store/lib.effects';
+import { ActionButtonComponent } from './action-button/action-button.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { StyleGuttersDirective } from './directives/style-gutters.directive';
     ComponentOutletDirective,
     SplitViewComponent,
     DisableGuttersDirective,
-    StyleGuttersDirective
+    StyleGuttersDirective,
+    ActionButtonComponent
   ],
   imports: [
     CommonModule,
     AngularSplitModule,
-    StoreModule.forFeature('components', reducer)
+    StoreModule.forFeature('components', reducer),
+    EffectsModule.forFeature([LibEffects])
   ],
   exports: [
     LayoutRootComponent,

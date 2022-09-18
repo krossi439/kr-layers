@@ -1,3 +1,5 @@
+import { Update } from "@ngrx/entity";
+import { SplitViewData } from "./lib/split-view/split-view.component";
 import { ComponentState } from "./lib/store/component-state.model";
 
 export const logoScreen = {
@@ -134,12 +136,12 @@ export const creditScreen = {
 };
 
 export const datetimeScreen = {
-    id: 'datatime-screen',
+    id: 'datetime-screen',
     selector: 'kr-screen',
     data: {
         messages: [
             new Date(Date.now()).toISOString(),
-            'https://github.com/krossi439/kr-layout'
+            'https://github.com/krossi439/kr-layers'
         ],
         textStyle: { "font-size": "2em", "margin": "0.5em 0" }
     }
@@ -157,6 +159,73 @@ export const appBar = {
         textStyle: {"font-weight": "bolder", "padding-left": "20px", "font-size": "1em", "white-space": "break-spaces"}
     }
 };
+
+export const teletypeScreen = {
+    id: 'terminal-screen',
+    selector: 'kr-tele-type',
+    data: null
+}
+
+
+const appContent1: Update<ComponentState<Partial<SplitViewData>>>[] = [{
+    id: 'bottom-bar',
+    changes: {
+        data: {
+            components: [
+                'datetime-screen',
+                creditScreen.id,
+                'github-screen'
+            ],
+        }
+    }
+}, {
+    id: 'right-content',
+    changes: {
+        data: {
+            components: [
+                teletypeScreen.id,
+                venusScreen.id
+            ],
+        }
+    }
+}, {
+    id: 'top-bar',
+    changes: {
+        data: {
+            components: [
+                logoScreen.id,
+                'order-button-2'
+            ],
+        }
+    }
+}];
+
+const appContent2: Partial<ComponentState<Partial<SplitViewData>>>[] = [{
+    id: 'bottom-bar',
+    data: {
+        components: [
+            'datetime-screen',
+            'github-screen',
+            creditScreen.id
+        ],
+    }
+}, {
+    id: 'right-content',
+    data: {
+        components: [
+            venusScreen.id,
+            teletypeScreen.id
+        ],
+    }
+}, {
+    id: 'top-bar',
+    data: {
+        components: [
+            logoScreen.id,
+            'order-button-1'
+        ],
+    }
+}];
 
 export const aboutPage: ComponentState<any>[] = [
     creditScreen,
@@ -199,7 +268,7 @@ export const aboutPage: ComponentState<any>[] = [
             orientation: 'vertical',
             unit: 'pixel',
             sizes: [375, '*'],
-            disabled: true
+            gutterStyle: {'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)'}
         }   
     }
 ];
@@ -209,6 +278,7 @@ export const homePage: ComponentState<any>[] = [
     logoScreen,
     venusScreen,
     creditScreen,
+    teletypeScreen,
     {
         ...navScreen,
         data: {
@@ -218,21 +288,63 @@ export const homePage: ComponentState<any>[] = [
     },
     {
         id: 'bottom-bar',
+        selector: 'kr-split-view',
+        data: {
+            components: [
+                'datetime-screen',
+                creditScreen.id,
+                'github-screen'
+            ],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [30, 35, 35],
+            disabled: true
+        }
+    },
+    {
+        id: 'datetime-screen',
         selector: 'kr-screen',
         data: {
-            ...datetimeScreen.data,
-            containerStyle: {'margin': '0', "flex-direction": "row", "justify-content": "space-between", "padding": "0"},
+            messages: [new Date(Date.now()).getTime()],
+            containerStyle: {'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center"},
             textStyle: {"font-size": "1.5em", "display": "flex", "padding": "0 20px"}
+        }  
+    },
+    {
+        id: 'github-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: ['https://github.com/krossi439/kr-layers'],
+            containerStyle: {'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center"},
+            textStyle: {"font-size": "1.5em", "display": "flex", "padding": "0 20px"}
+        }  
+    },
+    {
+        id: 'order-button-2',
+        selector: 'kr-action-button',
+        data: {
+            action: 'UpsertComponentStates',
+            props: appContent2,
+            label: 'Order 2'
+        }
+    },
+    {
+        id: 'order-button-1',
+        selector: 'kr-action-button',
+        data: {
+            action: 'UpsertComponentStates',
+            props: appContent1,
+            label: 'Order 1'
         }
     },
     {
         id: 'right-content',
         selector: 'kr-split-view',
         data: {
-            components: [venusScreen.id, creditScreen.id],
-            orientation: 'vertical',
-            unit: 'pixel',
-            sizes: ['*', 80],
+            components: [venusScreen.id, teletypeScreen.id],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [50, 50],
             disabled: true
         }
     },
@@ -248,13 +360,24 @@ export const homePage: ComponentState<any>[] = [
         }
     },
     {
+        id: "top-bar",
+        selector: 'kr-split-view',
+        data: {
+            components: [appBar.id, 'order-button-2'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [90, 10],
+            disabled: true
+        }
+    },
+    {
         id: 'layout-root',
         selector: 'kr-split-view',
         data: {
-            components: [appBar.id, 'center-content', 'bottom-bar'],
+            components: ['top-bar', 'center-content', 'bottom-bar'],
             orientation: 'vertical',
             unit: 'pixel',
-            sizes: [64, '*', 41],
+            sizes: [64, '*', 64],
             disabled: true
         }
     }
@@ -279,7 +402,8 @@ export const quadPage: ComponentState<any>[] = [
             orientation: 'vertical',
             unit: 'pixel',
             sizes: ['*', 350],
-            disabled: true
+            disabled: true,
+            editing: true
         }
     },
     {
@@ -290,7 +414,8 @@ export const quadPage: ComponentState<any>[] = [
             orientation: 'vertical',
             unit: 'pixel',
             sizes: ['*', 350],
-            disabled: true
+            disabled: true,
+            editing: true
         }
     },
     {
@@ -301,11 +426,11 @@ export const quadPage: ComponentState<any>[] = [
             orientation: 'horizontal',
             unit: 'percent',
             sizes: [30, 70],
-            disabled: true
-        }
+            disabled: true,
+            editing: true
+        } 
     }
 ];
-
 
 export const layouts: {[key: string]: any} = {
     "HOME": homePage,

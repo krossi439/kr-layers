@@ -1,24 +1,25 @@
 
-<ng-container *ngTemplateOutlet="view; context: { viewData: data | async }"></ng-container>
-
-<ng-template #view let-data="viewData">
-    <as-split
-        [direction]="data.orientation"
-        [unit]="data.unit"
-        (dragStart)="dragging = true"
-        (dragEnd)="dragging = false"
-        [gutterSize]="data.disabled ? 0 : null"
-        [krDisableGutters]="data?.disabled"
-        [krStyleGutters]="data?.gutterStyle"
+<div *ngIf="data.editing" class="controls">
+    <button class="text button" type="button" (click)="updateSelf({orientation: data.orientation === 'horizontal' ? 'vertical' : 'horizontal'})">Orientation</button>
+    <button class="text button" type="button" (click)="updateSelf({disabled: !data.disabled})">Disabled</button>
+    <button class="button" type="button" (click)="closeSelf()">X</button>
+</div>
+<as-split
+    [direction]="data.orientation"
+    [unit]="data.unit"
+    [gutterSize]="data.disabled ? 0 : null"
+    [krDisableGutters]="data.disabled"
+    [krStyleGutters]="data.gutterStyle"
+    (dragStart)="dragging = true"
+    (dragEnd)="dragging = false"
+>
+    <as-split-area
+        *ngFor="let id of data.components; let i = index"
+        [size]="data.sizes[i]"
+        [order]="i"
+        class="layout-area"
     >
-        <as-split-area
-            *ngFor="let id of data.components; let i = index"
-            [size]="data.sizes[i]"
-            [order]="i"
-            class="layout-area"
-        >
-            <div [hidden]="dragging === false" class="dragging-overlay"></div>
-            <ng-container *krComponentOutlet="id"></ng-container>
-        </as-split-area>
-    </as-split>
-</ng-template>
+        <div [hidden]="dragging === false" class="dragging-overlay"></div>
+        <ng-container *krComponentOutlet="id"></ng-container>
+    </as-split-area>
+</as-split>

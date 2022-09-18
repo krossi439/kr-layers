@@ -11,3 +11,17 @@
 .layout-area {
   overflow: inherit !important;
 }
+
+.controls {
+  position: fixed;
+  // z-index: 10;
+}
+
+.button {
+  background-color: blue;
+  border: 3px solid white;
+  filter: blur(1.5px);
+  font-size: 1em;
+	color: #fff;
+	text-shadow: 1px 3px green, -2px -3px red;
+}

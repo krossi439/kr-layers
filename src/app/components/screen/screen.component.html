@@ -1,22 +1,17 @@
-<ng-container *ngTemplateOutlet="view; context: { viewData: data | async }"></ng-container>
-
-<ng-template #view let-data="viewData">
-    <div class="container">
-        <div class="vhs-message" [ngStyle]="data.containerStyle">
-            <div class="text" [ngStyle]="data.textStyle" *ngFor="let msg of data.messages">
-                {{ msg }}
-            </div>
-            
-            <div
-                class="text nav-item"
-                [ngClass]="{ 'selected': data?.selectedNav === nav }"
-                [ngStyle]="data.textStyle"
-                *ngFor="let nav of data.navItems"
-                (click)="navClicked(nav)"
-            >
-                [{{ nav }}]
-            </div>
+<div class="container">
+    <div class="vhs-message" [ngStyle]="data.containerStyle">
+        <div class="text" [ngStyle]="data.textStyle" *ngFor="let msg of data.messages">
+            {{ msg }}
         </div>
         
+        <div
+            class="text nav-item"
+            [ngClass]="{ 'selected': data.selectedNav === nav }"
+            [ngStyle]="data.textStyle"
+            *ngFor="let nav of data.navItems"
+            (click)="navClicked(nav)"
+        >
+            [{{ nav }}]
+        </div>
     </div>
-</ng-template>
+</div>

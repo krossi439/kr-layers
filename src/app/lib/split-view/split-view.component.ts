@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { registerComponent } from '../register-component';
 
-interface SplitViewData {
+export interface SplitViewData {
   components: string[];
   orientation: 'horizontal' | 'vertical';
   unit: 'pixel' | 'percent';
-  sizes: (number | '*')[];
-  disabled: boolean;
+  sizes: (number | null)[];
+  gutterStyle?: Record<string, string | number>,
+  disabled?: boolean;
+  editing?: boolean;
 }
 
 @registerComponent({
@@ -20,9 +21,16 @@ interface SplitViewData {
   styleUrls: ['./split-view.component.scss']
 })
 export class SplitViewComponent implements OnInit {
+  @Input() data: SplitViewData = {
+    components: [],
+    orientation: 'horizontal',
+    unit: 'pixel',
+    sizes: []
+  };
 
   dragging = false;
-  data: Observable<SplitViewData>;
+  updateSelf: (newState: Partial<SplitViewData>) => void;
+  closeSelf: () => void;
 
   constructor() { }
 

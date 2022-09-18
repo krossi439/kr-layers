@@ -6,8 +6,8 @@ import { Subscription } from 'rxjs';
   selector: '[krStyleGutters]'
 })
 export class StyleGuttersDirective {
-  @Input() set krStyleGutters(style: {[k: string]: any}) {
-    this.style = style;
+  @Input() set krStyleGutters(style: {[k: string]: any} | undefined) {
+    this.style = style ? style : {};
   }
 
   style: {[k: string]: any} = {};
@@ -26,13 +26,9 @@ export class StyleGuttersDirective {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!(changes && changes['SimpleChanges'])) {
-      return;
-    }
+    const { previousValue, currentValue } = changes['krStyleGutters'];
 
-    const { previousValue, currentValue } = changes['SimpleChanges'];
-
-    if (currentValue != previousValue) {
+    if (currentValue && currentValue != previousValue) {
       this.setGutterStyle();
     }
   }
@@ -42,7 +38,7 @@ export class StyleGuttersDirective {
   }
 
   setGutterStyle() {
-    if (this.gutterEls) {
+    if (this.gutterEls && this.style) {
       this.gutterEls.forEach((gutter) => {
         Object.keys(this.style).forEach((key) => this.renderer.setStyle(gutter.nativeElement, key, this.style[key]))
       });

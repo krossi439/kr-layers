@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { registerComponent } from 'src/app/lib/register-component';
 import { featureNavigation } from '../store/feature.actions';
 
 interface ScreenData {
-  containerStyle: {[key: string]: string};
-  textStyle: {[key: string]: string};
-  messages: string[];
-  navItems: string[];
-  selectedNav: string;
+  containerStyle?: {[key: string]: string};
+  textStyle?: {[key: string]: string};
+  messages?: string[];
+  navItems?: string[];
+  selectedNav?: string;
 }
 
 @registerComponent({
@@ -22,7 +21,7 @@ interface ScreenData {
   styleUrls: ['./screen.component.scss']
 })
 export class ScreenComponent implements OnInit {
-  data: Observable<ScreenData>;
+  @Input() data: ScreenData;
 
   constructor(private store: Store) { }
 
