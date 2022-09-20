@@ -167,36 +167,30 @@ export const teletypeScreen = {
 }
 
 
-const appContent1: Update<ComponentState<Partial<SplitViewData>>>[] = [{
+const appContent1: Partial<ComponentState<Partial<SplitViewData>>>[] = [{
     id: 'bottom-bar',
-    changes: {
-        data: {
-            components: [
-                'datetime-screen',
-                creditScreen.id,
-                'github-screen'
-            ],
-        }
+    data: {
+        components: [
+            'datetime-screen',
+            'github-screen',
+            creditScreen.id
+        ],
     }
 }, {
     id: 'right-content',
-    changes: {
-        data: {
-            components: [
-                teletypeScreen.id,
-                venusScreen.id
-            ],
-        }
+    data: {
+        components: [
+            teletypeScreen.id,
+            venusScreen.id
+        ],
     }
 }, {
     id: 'top-bar',
-    changes: {
-        data: {
-            components: [
-                logoScreen.id,
-                'order-button-2'
-            ],
-        }
+    data: {
+        components: [
+            appBar.id,
+            'order-button-2'
+        ],
     }
 }];
 
@@ -205,8 +199,8 @@ const appContent2: Partial<ComponentState<Partial<SplitViewData>>>[] = [{
     data: {
         components: [
             'datetime-screen',
-            'github-screen',
-            creditScreen.id
+            creditScreen.id,
+            'github-screen'
         ],
     }
 }, {
@@ -221,7 +215,7 @@ const appContent2: Partial<ComponentState<Partial<SplitViewData>>>[] = [{
     id: 'top-bar',
     data: {
         components: [
-            logoScreen.id,
+            appBar.id,
             'order-button-1'
         ],
     }
@@ -363,7 +357,7 @@ export const homePage: ComponentState<any>[] = [
         id: "top-bar",
         selector: 'kr-split-view',
         data: {
-            components: [appBar.id, 'order-button-2'],
+            components: [appBar.id, 'order-button-1'],
             orientation: 'horizontal',
             unit: 'percent',
             sizes: [90, 10],

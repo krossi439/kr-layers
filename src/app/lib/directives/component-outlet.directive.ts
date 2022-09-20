@@ -28,7 +28,10 @@ export class ComponentOutletDirective implements OnInit, OnDestroy {
         this.componentRef = this.viewContainer.createComponent(getComponent(component.selector));
 
         this.subscriptions.add(this.store.pipe(select(selectComponentData(this.componentId)))
-          .subscribe((data) => this.componentRef.setInput('data', data)));
+          .subscribe((data) => {
+            this.componentRef.setInput('data', data);
+            this.componentRef.changeDetectorRef.detectChanges();
+          }));
 
         this.componentRef.instance.updateSelf = (componentState: any) => this.store.dispatch(updateComponentState({
           componentState: {
