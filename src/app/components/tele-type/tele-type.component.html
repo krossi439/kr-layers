@@ -1,6 +1,6 @@
-<div class="container">
-    <p *ngFor="let segment of textSegments; let i = index" class="text">
+<div class="container" [ngStyle]="data.containerStyle">
+    <p *ngFor="let segment of data.messages; let i = index" class="text" [ngStyle]="data.textStyle">
         {{ segment }}
-        <span *ngIf="i == textSegments.length - 1">|</span>
+        <span *ngIf="i == data.messages.length - 1">|</span>
     </p>
 </div>

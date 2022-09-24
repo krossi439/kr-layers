@@ -163,7 +163,18 @@ export const appBar = {
 export const teletypeScreen = {
     id: 'terminal-screen',
     selector: 'kr-tele-type',
-    data: null
+    data: {
+        messages: [
+            'And if I only could',
+            'I\'d make a deal with God',
+            'And I\'d get him to swap our places',
+            '',
+            'Be running up that road',
+            'Be running up that hill',
+            'Be running up that building'
+          ],
+        textStyle: {"font-size": "1.75em"}
+    }
 }
 
 
@@ -238,8 +249,8 @@ export const aboutPage: ComponentState<any>[] = [
         data: {
             components: [datetimeScreen.id, creditScreen.id],
             orientation: 'vertical',
-            unit: 'pixel',
-            sizes: ['*', 375],
+            unit: 'percent',
+            sizes: [50, 50],
             gutterStyle: {'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)'}
         }
     },
@@ -319,7 +330,9 @@ export const homePage: ComponentState<any>[] = [
         data: {
             action: 'UpsertComponentStates',
             props: appContent2,
-            label: 'Order 2'
+            label: '↔️',
+            "buttonStyle": {"font-size": "2em", "font-weight": "600", "color": "yellow"},
+            tooltip: "Swap Order"
         }
     },
     {
@@ -328,7 +341,9 @@ export const homePage: ComponentState<any>[] = [
         data: {
             action: 'UpsertComponentStates',
             props: appContent1,
-            label: 'Order 1'
+            label: '↔️',
+            "buttonStyle": {"font-size": "2em", "font-weight": "600", "color": "yellow"},
+            tooltip: "Swap Order"
         }
     },
     {

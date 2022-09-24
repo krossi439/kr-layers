@@ -7,6 +7,9 @@ export interface ActionButtonData {
   label: string;
   action: string;
   props: any;
+  containerStyle: Record<string, string>;
+  buttonStyle: Record<string, string>;
+  tooltip: string;
 }
 
 @registerComponent({

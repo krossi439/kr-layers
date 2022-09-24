@@ -1,3 +1,5 @@
-<button class="button" (click)="dispatch()">
-    {{ data.label }}
-</button>
+<div [ngStyle]="data.containerStyle">
+    <button [ngStyle]="data.buttonStyle" [title]="data.tooltip" class="button" (click)="dispatch()">
+        {{ data.label }}
+    </button>
+</div>

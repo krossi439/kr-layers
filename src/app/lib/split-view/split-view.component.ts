@@ -21,12 +21,7 @@ export interface SplitViewData {
   styleUrls: ['./split-view.component.scss']
 })
 export class SplitViewComponent implements OnInit {
-  @Input() data: SplitViewData = {
-    components: [],
-    orientation: 'horizontal',
-    unit: 'pixel',
-    sizes: []
-  };
+  @Input() data: SplitViewData;
 
   dragging = false;
   updateSelf: (newState: Partial<SplitViewData>) => void;

@@ -1,9 +1,4 @@
 
-<div *ngIf="data.editing" class="controls">
-    <button class="text button" type="button" (click)="updateSelf({orientation: data.orientation === 'horizontal' ? 'vertical' : 'horizontal'})">Orientation</button>
-    <button class="text button" type="button" (click)="updateSelf({disabled: !data.disabled})">Disabled</button>
-    <button class="button" type="button" (click)="closeSelf()">X</button>
-</div>
 <as-split
     [direction]="data.orientation"
     [unit]="data.unit"

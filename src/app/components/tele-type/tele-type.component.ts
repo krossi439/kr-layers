@@ -1,5 +1,12 @@
+import { getSafePropertyAccessString } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { registerComponent } from 'src/app/lib/register-component';
+
+interface TeleTypeData {
+  messages: string[];
+  containerStyle: Record<string, string>,
+  textStyle: Record<string, string>,
+}
 
 @registerComponent({
   selector: 'kr-tele-type',
@@ -12,16 +19,6 @@ import { registerComponent } from 'src/app/lib/register-component';
 })
 export class TeleTypeComponent implements OnInit {
   @Input() data: any;
-  
-  textSegments = [
-    'And if I only could',
-    'I\'d make a deal with God',
-    'And I\'d get him to swap our places',
-    '',
-    'Be running up that road',
-    'Be running up that hill',
-    'Be running up that building'
-  ];
 
   constructor() { }
 
