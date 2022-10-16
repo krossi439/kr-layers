@@ -2,8 +2,8 @@ import { Action, createReducer, on, createFeatureSelector, createSelector } from
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { ComponentState } from './component-state.model';
 import * as ComponentStateActions from './component-state.actions';
-import { homePage } from 'src/app/app-layouts';
 import { deepMerge } from '../utils/deep-merge';
+import { homePage } from 'src/app/layouts/home-page';
 
 export const componentStatesFeatureKey = 'componentStates';
 

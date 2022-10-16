@@ -30,7 +30,6 @@ export class ActionButtonComponent implements OnInit {
   }
 
   dispatch() {
-    console.log(this.data.props);
     this.store.dispatch(upsertComponentStates({componentStates: this.data.props}));
   }
 

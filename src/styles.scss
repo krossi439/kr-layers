@@ -4,3 +4,7 @@ body {
     cursor: url(/assets/cursor.svg), auto;
     caret-color: #F9F6EE;
 }
+
+button, .cursor-fill {
+    cursor: url(/assets/cursor-fill.svg), auto;
+}
