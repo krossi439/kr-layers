@@ -9,448 +9,21 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "aboutPage": () => (/* binding */ aboutPage),
-/* harmony export */   "appBar": () => (/* binding */ appBar),
-/* harmony export */   "creditScreen": () => (/* binding */ creditScreen),
-/* harmony export */   "datetimeScreen": () => (/* binding */ datetimeScreen),
-/* harmony export */   "homePage": () => (/* binding */ homePage),
-/* harmony export */   "layouts": () => (/* binding */ layouts),
-/* harmony export */   "logoScreen": () => (/* binding */ logoScreen),
-/* harmony export */   "navScreen": () => (/* binding */ navScreen),
-/* harmony export */   "quadPage": () => (/* binding */ quadPage),
-/* harmony export */   "teletypeScreen": () => (/* binding */ teletypeScreen),
-/* harmony export */   "venusScreen": () => (/* binding */ venusScreen)
+/* harmony export */   "layouts": () => (/* binding */ layouts)
 /* harmony export */ });
-const logoScreen = {
-    id: 'logo-screen',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            `
-        ██╗░░░░░░█████╗░██╗░░░██╗███████╗██████╗░░██████╗
-        ██║░░░░░██╔══██╗╚██╗░██╔╝██╔════╝██╔══██╗██╔════╝
-        ██║░░░░░███████║░╚████╔╝░█████╗░░██████╔╝╚█████╗░
-        ██║░░░░░██╔══██║░░╚██╔╝░░██╔══╝░░██╔══██╗░╚═══██╗
-        ███████╗██║░░██║░░░██║░░░███████╗██║░░██║██████╔╝
-        ╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═════╝░`,
-            `
-        █▀ ▀█▀ ▄▀█ ▀█▀ █▀▀  █▀▄ █▀█ █ █░█ █▀▀ █▄░█  █░█ █
-        ▄█ ░█░ █▀█ ░█░ ██▄  █▄▀ █▀▄ █ ▀▄▀ ██▄ █░▀█  █▄█ █`
-        ],
-        textStyle: { 'font-size': '1.5em', 'white-space': 'break-spaces' }
-    }
-};
-const venusScreen = {
-    id: 'venus-screen',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            `
-            ▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓█▀▀███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▀░░▒▒░░    '░░░,,"▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀▒▒▒▒░░,░░▒░░        ╙▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓█▒▐╣▒╣▒░░░▒╖░▒─;╓,,  '░▒╓░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▐▒▒▒░▒▓▓▄▒╢╜▒░░░      ╙▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▌▓▓▒╙▓▓▒╢D%▒K╣▒▒░░        ░▄H▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▌▒╢▓▓▓▓▓█▓▓▓▓▒▒▒░        ,,░╫τ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓╣╣▒æ@Ñ▓███╖ ]▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀████▓▓▓▓▓███▓▀▀██▓▒ ▒▒▀╟▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓█▓╬▓▓██▓███▓▓▓▒▒╜╜╜╙ ░▒▓▓    ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▓▓▓╣▒▒░░,░░▓▄▄▄▄@░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▒▒░░████▌░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓████▓╢▓▓▓▓▓▓▓╣╣▒████▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀╣╢╫▓▓▓▓▓▓╣▒╟▓▓█▓░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒▒╢╢▓▓▓▓▓╣╣▒░╖p╖▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█║╢▒▒╫▓▓▓▓▓▓▓██▓▓░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░║▓▓▓▓▓╣╢╢▓▓▓██▒░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒╫▓▓▓████████╣▒▒░"▀▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▓▓███████▓▓╣▒░░      '▀▀▓▓▓▓▓▓▀▀'"▀░▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░▒╫▓▓█████▓▓▒▒▒░░           ░ ░░░░░░░░░'░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢▓▓████▓▓▓╣▒▒▒░░            ░░░░░░░░░░░ ░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████▓╣▒▒▒▒░              ░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓▒▒░░░░░░░   ░          ░░░░░░░░░░▒╬╣▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓█▀▒▒╢▓▓▓▓▓╢╫▓▒▒▒╜╜╜▒▒░░   ░░░ ░░            ░░░░░░░░▒▒▒╣▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓█▀░░░░░░▒▒▒▒▒▒▒▒▒▒▒░░░                         ░░░  ░░░░▒▒▓╣▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓█ ▒░░░░░░░░░░░▒▒░▒░░░░░░░ ░░      ░░     ░░   ░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▌░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░ ░     ,   ░░░░░░░ ░░░░░░░░░▒▒▒▒╣▓╢▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓█░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░     ░   ░░░░░░░░░░░░░░░░░▒▒║╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▌▒▒▒▒▒▒▒░░░░░░▒▒▒▒░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░░ ░░░░░░░▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▌▒▒▒▒▒▒▒▒░░ ░░▓▓▒▒▒▒▒▒░░░░░░       ░░░░░░░░░░▒░░░░░░░░░░░░░▒▒╢╫▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▌▒▒▒▒▒▒▒▒░░░░░╙█▓▓╢▒▒▒▒░░░              ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓█▒▒▒▒▒▒▒▒░░░░░  ▀█▓▓╣▒▒░░░░░░░  ░░    ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╢╬╣╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓░▒╣╢▒▒▒▒░░░░   ░ ▐▓╣╣▒▒░░░░░░░░░░░░░░░░░░▒▒╢╢╣╢╣╢╢╢▒▒╢╢╢╢▓▓▓▓╣▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▌▒╢╢╣▒▒▒▒▒░░░     ▓▓▓▓▒@@▒▒▒▒▒░▒▒░░░▒▒▒▒▒▒▒╢╫▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓╣╫▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▒▒▒▒╣▒▒▒▒@░░    '└▓▓███▓▓▓▓╢▒▒▒╢▒▒▒▒▒▒▒▒▒▒▒╫▓▓▓▓▓▓▓▓▓██▓█▓▓▓╣╫▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▒▒▒╢▒▒▒▒░░░░ ,,░░╠████████▓▓▓▓▓▓▓▓▓╣▒▒▒▒▒▒▒▒╢▓▓▓████████▓╣╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▌▒╢╢╢▒▒▒▄▓█████████████████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒╜╜▒▓▓▓▓▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▒╢╢▓▓█████████████████████████▓▒▒░░░░▒▒▒░░░░░░░░░▒░░▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▒██████████████╢▓▓▓▓▓▓████▓╣▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓████████████░╢╢╢▓▓▓▓▓█▓▓╣╢╣╢╢╢╣╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓█████▓╢╢▓▓░▒▒╢╫▓▓▓▓▓▓▓▓▓▓╢╣╣╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒▒╢╢▓▓▓▓▓▓▓▓▓╣╢╢╣╣╢╢▒╣▒▒╢╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢╢╢╢╢╢╢╢╣╣╢╣╢╢╣╢╢╢╢╢╣╢╢╢╢╣╢▒▒▒╢╢╢╢╢▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▒╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓╣▓▓╣╢╢╢╢╢╣╢╢╢╢╢╢╢╣╣╢▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢╫▓▓▓▓╣╣▒╢╢╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╢╢╢╢╢╣╣╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒░▒▒▒▒▒▒▒░▒░░░░░▒▒▒░░▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░▒▒▒▒▒▒░░▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ░░░░░░░░░░░░▒░░░░,░░░░▒╫▓▓▒▒▒▒░░░░░░▒▒▒▒▒▒░░░▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ ░░░░░░░░▒▒▒▒▒▒▒▒░░░░      ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒░░ ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒╣▒╢▒╢╢▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓▌ ░░▒▒▒╢╢╢╣╢╢╣╢╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░▒▒▒▒╢╢╢╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▓░░░▒▒▒▒▒▒▒▒╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒╫▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓▌░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░░░▒▒▒╫▓▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓▌░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒",,░░▒▒@▒▒╢ ░░░,░▒╫▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░╓╖░░░░░░╓╜░,m╜░░░▒▒▒▒▒▒╣▒▒▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒╖╫▓▓▓▓▓▓"░░▒░░░░░m░░▒░▒▒░░╢╢╜▒▒▄▓▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░╜╩╨╜░░░░╖░░░▒ÑÑ▓▓▓Ñ╝░░▒@░░░░░░░▒▒▒░░░░░▒▄@▓▓▒▒█▓▓▓▓▓▓
-            ▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒@@▒╖░▒▒▒▒▒▒▒▄█▄▄▄████▓▓░▒▒╟▒▒▒▒▒░░▒▒░░░▓@g╣▓▒▒▓██▀▀╜║▒▒▓▓▓
-            ▓▓▓▓▓▓▓░▒░'""╙╜╝╝╨▒▓╢@╝▒░▄▄▄█████▀▓▓▓▓▀▓╢▒▒▒▒▒▒╜▒@╜▒▒▒▒░░░░░ ▐▓▓▓█▀▀░▒╢╢╬▓▓@▓▓▓▓
-            ▓▓▓▓▓▓ ░░░░▒▄▄▓▄▓@░░░╓▓▓▓██▀█▓████▓▓╣▓▒▒▓▓█▒▒╢░▒░▒╫▓▓▓░░░░░░░░▒▄▄▄▄▄▄▄▄▄██▓▓█▓▓▓
-            ▓▓▓▓▓█████████▓▒╢▒▒█▓▓▓▄▄█████▓▓▓████▓▄▓▓▓█▓▓╝╜▒▒░░░░░░░░ ░░░░░▀▀▀▀▀█████████▓▓▓
-            ▓▓▓▓▓▓▓▓▓█▓▓▓▓▓██████▓██▀▓╣▒▒▒▒▒▒╢▒▓▓▓▒▒▒▓▒░░▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒██╢╢▓▓▓
-            ▓▓▓▓▓▓▌▒╢╫▓▓▓▓▓█████▀▒▒▒▒▒▒▒▓▓█████╢▓╣╣▒╣▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒╢╢▒█▓▓▓▓▓
-            ▓▓▓▓▓▓▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓╣▓▓▓█████▓▓╣▓▓▓╣▒▒▒▒╣░▒▒▒▒▒▒▒▒░▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓
-            ▓▓▓▓▓▓▒▒╢╢▓▓▓▓▓▒╢▓▓▓██████████▓╣▓▓▓▓▓▓▒▒▒▒╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╣╢╢╢▓▓▓▓▓▓
-            ▓▓▓▓▓▒▒▒▒▒▒╢╢▒▓█████████████▓▓▒▓▓▓▓▓▓▒╢▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢▒╫╣▓▓▓▓▓▓
-            ▀▀▀▀╩╩╩╩╩▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀╩╝╝╩╝╩╩╩╩╝╩╝╨╨╨╨╨╨╨╨╨╨╨╨╨╨╜╝╩╩╩╝╝╝╩╩╩▀▀▀▀▀▀`
-        ],
-        textStyle: { 'font-size': '7px', 'white-space': 'break-spaces' }
-    }
-};
-const navScreen = {
-    id: 'nav-screen',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            'CHOOSE CONFIGURATION:'
-        ],
-        navItems: [
-            'HOME',
-            'ABOUT',
-            'QUAD'
-        ],
-        textStyle: { "font-size": "2em", "margin": "0.5em 0", "white-space": "no-wrap" }
-    }
-};
-const creditScreen = {
-    id: 'credit-screen',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            'Kayla Rossi'
-        ],
-        containerStyle: { "justify-content": "center" },
-        textStyle: { "margin": "0.5em 0", "line-break": "anywhere", "font-weight": "bolder" }
-    }
-};
-const datetimeScreen = {
-    id: 'datetime-screen',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            new Date(Date.now()).toISOString(),
-            'https://github.com/krossi439/kr-layers'
-        ],
-        textStyle: { "font-size": "2em", "margin": "0.5em 0" }
-    }
-};
-const appBar = {
-    id: 'appbar',
-    selector: 'kr-screen',
-    data: {
-        messages: [
-            `█░░ ▄▀█ █▄█ █▀▀ █▀█ █▀
- █▄▄ █▀█ ░█░ ██▄ █▀▄ ▄█`
-        ],
-        containerStyle: { 'margin': '0', "justify-content": "center" },
-        textStyle: { "font-weight": "bolder", "padding-left": "20px", "font-size": "1em", "white-space": "break-spaces" }
-    }
-};
-const teletypeScreen = {
-    id: 'terminal-screen',
-    selector: 'kr-tele-type',
-    data: {
-        messages: [
-            'And if I only could',
-            'I\'d make a deal with God',
-            'And I\'d get him to swap our places',
-            '',
-            'Be running up that road',
-            'Be running up that hill',
-            'Be running up that building'
-        ],
-        textStyle: { "font-size": "1.75em" }
-    }
-};
-const appContent1 = [{
-        id: 'bottom-bar',
-        data: {
-            components: [
-                'datetime-screen',
-                'github-screen',
-                creditScreen.id
-            ],
-        }
-    }, {
-        id: 'right-content',
-        data: {
-            components: [
-                teletypeScreen.id,
-                venusScreen.id
-            ],
-        }
-    }, {
-        id: 'top-bar',
-        data: {
-            components: [
-                appBar.id,
-                'order-button-2'
-            ],
-        }
-    }];
-const appContent2 = [{
-        id: 'bottom-bar',
-        data: {
-            components: [
-                'datetime-screen',
-                creditScreen.id,
-                'github-screen'
-            ],
-        }
-    }, {
-        id: 'right-content',
-        data: {
-            components: [
-                venusScreen.id,
-                teletypeScreen.id
-            ],
-        }
-    }, {
-        id: 'top-bar',
-        data: {
-            components: [
-                appBar.id,
-                'order-button-1'
-            ],
-        }
-    }];
-const aboutPage = [
-    creditScreen,
-    logoScreen,
-    datetimeScreen,
-    {
-        ...navScreen,
-        data: {
-            ...navScreen.data,
-            selectedNav: 'ABOUT'
-        }
-    },
-    {
-        id: "sub-screen-1",
-        selector: "kr-split-view",
-        data: {
-            components: [datetimeScreen.id, creditScreen.id],
-            orientation: 'vertical',
-            unit: 'percent',
-            sizes: [50, 50],
-            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
-        }
-    },
-    {
-        id: "sub-screen-2",
-        selector: "kr-split-view",
-        data: {
-            components: [navScreen.id, 'sub-screen-1'],
-            orientation: 'horizontal',
-            unit: 'pixel',
-            sizes: [400, '*'],
-            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
-        }
-    },
-    {
-        id: 'layout-root',
-        selector: 'kr-split-view',
-        data: {
-            components: [logoScreen.id, 'sub-screen-2'],
-            orientation: 'vertical',
-            unit: 'pixel',
-            sizes: [375, '*'],
-            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
-        }
-    }
-];
-const homePage = [
-    appBar,
-    logoScreen,
-    venusScreen,
-    creditScreen,
-    teletypeScreen,
-    {
-        ...navScreen,
-        data: {
-            ...navScreen.data,
-            selectedNav: 'HOME'
-        }
-    },
-    {
-        id: 'bottom-bar',
-        selector: 'kr-split-view',
-        data: {
-            components: [
-                'datetime-screen',
-                creditScreen.id,
-                'github-screen'
-            ],
-            orientation: 'horizontal',
-            unit: 'percent',
-            sizes: [30, 35, 35],
-            disabled: true
-        }
-    },
-    {
-        id: 'datetime-screen',
-        selector: 'kr-screen',
-        data: {
-            messages: [new Date(Date.now()).getTime()],
-            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
-            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
-        }
-    },
-    {
-        id: 'github-screen',
-        selector: 'kr-screen',
-        data: {
-            messages: ['https://github.com/krossi439/kr-layers'],
-            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
-            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
-        }
-    },
-    {
-        id: 'order-button-2',
-        selector: 'kr-action-button',
-        data: {
-            action: 'UpsertComponentStates',
-            props: appContent2,
-            label: '↔️',
-            "buttonStyle": { "font-size": "2em", "font-weight": "600", "color": "yellow" },
-            tooltip: "Swap Order"
-        }
-    },
-    {
-        id: 'order-button-1',
-        selector: 'kr-action-button',
-        data: {
-            action: 'UpsertComponentStates',
-            props: appContent1,
-            label: '↔️',
-            "buttonStyle": { "font-size": "2em", "font-weight": "600", "color": "yellow" },
-            tooltip: "Swap Order"
-        }
-    },
-    {
-        id: 'right-content',
-        selector: 'kr-split-view',
-        data: {
-            components: [venusScreen.id, teletypeScreen.id],
-            orientation: 'horizontal',
-            unit: 'percent',
-            sizes: [50, 50],
-            disabled: true
-        }
-    },
-    {
-        id: 'center-content',
-        selector: 'kr-split-view',
-        data: {
-            components: [navScreen.id, 'right-content'],
-            orientation: 'horizontal',
-            unit: 'percent',
-            sizes: [30, 70],
-            disabled: true
-        }
-    },
-    {
-        id: "top-bar",
-        selector: 'kr-split-view',
-        data: {
-            components: [appBar.id, 'order-button-1'],
-            orientation: 'horizontal',
-            unit: 'percent',
-            sizes: [90, 10],
-            disabled: true
-        }
-    },
-    {
-        id: 'layout-root',
-        selector: 'kr-split-view',
-        data: {
-            components: ['top-bar', 'center-content', 'bottom-bar'],
-            orientation: 'vertical',
-            unit: 'pixel',
-            sizes: [64, '*', 64],
-            disabled: true
-        }
-    }
-];
-const quadPage = [
-    logoScreen,
-    creditScreen,
-    datetimeScreen,
-    {
-        ...navScreen,
-        data: {
-            ...navScreen.data,
-            selectedNav: 'QUAD'
-        }
-    },
-    {
-        id: 'left-content',
-        selector: 'kr-split-view',
-        data: {
-            components: [navScreen.id, creditScreen.id],
-            orientation: 'vertical',
-            unit: 'pixel',
-            sizes: ['*', 350],
-            disabled: true,
-            editing: true
-        }
-    },
-    {
-        id: 'right-content',
-        selector: 'kr-split-view',
-        data: {
-            components: [logoScreen.id, datetimeScreen.id],
-            orientation: 'vertical',
-            unit: 'pixel',
-            sizes: ['*', 350],
-            disabled: true,
-            editing: true
-        }
-    },
-    {
-        id: 'layout-root',
-        selector: 'kr-split-view',
-        data: {
-            components: ['left-content', 'right-content'],
-            orientation: 'horizontal',
-            unit: 'percent',
-            sizes: [30, 70],
-            disabled: true,
-            editing: true
-        }
-    }
-];
+/* harmony import */ var _layouts_about_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layouts/about-page */ 9924);
+/* harmony import */ var _layouts_home_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layouts/home-page */ 9077);
+/* harmony import */ var _layouts_quad_screen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layouts/quad-screen */ 2556);
+/* harmony import */ var _layouts_waves_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layouts/waves-page */ 5701);
+
+
+
+
 const layouts = {
-    "HOME": homePage,
-    "ABOUT": aboutPage,
-    "QUAD": quadPage
+    "WAVES": _layouts_waves_page__WEBPACK_IMPORTED_MODULE_3__.wavesPage,
+    "HOME": _layouts_home_page__WEBPACK_IMPORTED_MODULE_1__.homePage,
+    "ABOUT": _layouts_about_page__WEBPACK_IMPORTED_MODULE_0__.aboutPage,
+    "QUAD": _layouts_quad_screen__WEBPACK_IMPORTED_MODULE_2__.quadPage
 };
 
 
@@ -703,15 +276,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentsModule": () => (/* binding */ ComponentsModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 6895);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 6895);
 /* harmony import */ var _screen_screen_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./screen/screen.component */ 7415);
 /* harmony import */ var _bypass_href_security_pipe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bypass-href-security.pipe */ 9394);
 /* harmony import */ var _lib_lib_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/lib.module */ 518);
 /* harmony import */ var _code_pen_code_pen_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./code-pen/code-pen.component */ 9925);
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/effects */ 7747);
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/effects */ 7747);
 /* harmony import */ var _store_feature_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/feature.effects */ 8573);
 /* harmony import */ var _tele_type_tele_type_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tele-type/tele-type.component */ 1890);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _image_image_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./image/image.component */ 5113);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 4650);
+
 
 
 
@@ -725,15 +300,64 @@ __webpack_require__.r(__webpack_exports__);
 class ComponentsModule {
 }
 ComponentsModule.ɵfac = function ComponentsModule_Factory(t) { return new (t || ComponentsModule)(); };
-ComponentsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: ComponentsModule });
-ComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,
+ComponentsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: ComponentsModule });
+ComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,
         _lib_lib_module__WEBPACK_IMPORTED_MODULE_2__.LibModule,
-        _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__.EffectsModule.forFeature([_store_feature_effects__WEBPACK_IMPORTED_MODULE_4__.FeatureEffects])] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](ComponentsModule, { declarations: [_screen_screen_component__WEBPACK_IMPORTED_MODULE_0__.ScreenComponent,
+        _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__.EffectsModule.forFeature([_store_feature_effects__WEBPACK_IMPORTED_MODULE_4__.FeatureEffects])] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](ComponentsModule, { declarations: [_screen_screen_component__WEBPACK_IMPORTED_MODULE_0__.ScreenComponent,
         _bypass_href_security_pipe__WEBPACK_IMPORTED_MODULE_1__.BypassHrefSecurityPipe,
         _code_pen_code_pen_component__WEBPACK_IMPORTED_MODULE_3__.CodePenComponent,
-        _tele_type_tele_type_component__WEBPACK_IMPORTED_MODULE_5__.TeleTypeComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,
-        _lib_lib_module__WEBPACK_IMPORTED_MODULE_2__.LibModule, _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__.EffectsFeatureModule] }); })();
+        _tele_type_tele_type_component__WEBPACK_IMPORTED_MODULE_5__.TeleTypeComponent,
+        _image_image_component__WEBPACK_IMPORTED_MODULE_6__.ImageComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,
+        _lib_lib_module__WEBPACK_IMPORTED_MODULE_2__.LibModule, _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__.EffectsFeatureModule] }); })();
+
+
+/***/ }),
+
+/***/ 5113:
+/*!*****************************************************!*\
+  !*** ./src/app/components/image/image.component.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ImageComponent": () => (/* binding */ ImageComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 655);
+/* harmony import */ var src_app_lib_register_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/lib/register-component */ 6019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6895);
+var ImageComponent_1;
+
+
+
+
+let ImageComponent = ImageComponent_1 = class ImageComponent {
+    constructor() { }
+    get imageData() {
+        return this.data && this.data.src;
+    }
+    ngOnInit() {
+    }
+};
+ImageComponent.ɵfac = function ImageComponent_Factory(t) { return new (t || ImageComponent)(); };
+ImageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ImageComponent, selectors: [["kr-image"]], inputs: { data: "data" }, decls: 2, vars: 3, consts: [[3, "ngStyle"], [3, "src", "ngStyle"]], template: function ImageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "img", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngStyle", ctx.data.containerStyle);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("src", ctx.imageData, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"])("ngStyle", ctx.data.imgStyle);
+    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgStyle] });
+ImageComponent = ImageComponent_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,src_app_lib_register_component__WEBPACK_IMPORTED_MODULE_0__.registerComponent)({
+        selector: 'kr-image',
+        componentClass: ImageComponent_1
+    })
+], ImageComponent);
+
 
 
 /***/ }),
@@ -796,7 +420,7 @@ let ScreenComponent = ScreenComponent_1 = class ScreenComponent {
     }
 };
 ScreenComponent.ɵfac = function ScreenComponent_Factory(t) { return new (t || ScreenComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_3__.Store)); };
-ScreenComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ScreenComponent, selectors: [["kr-screen"]], inputs: { data: "data" }, decls: 4, vars: 3, consts: [[1, "container"], [1, "vhs-message", 3, "ngStyle"], ["class", "text", 3, "ngStyle", 4, "ngFor", "ngForOf"], ["class", "text nav-item", 3, "ngClass", "ngStyle", "click", 4, "ngFor", "ngForOf"], [1, "text", 3, "ngStyle"], [1, "text", "nav-item", 3, "ngClass", "ngStyle", "click"]], template: function ScreenComponent_Template(rf, ctx) { if (rf & 1) {
+ScreenComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ScreenComponent, selectors: [["kr-screen"]], inputs: { data: "data" }, decls: 4, vars: 3, consts: [[1, "container"], [1, "vhs-message", 3, "ngStyle"], ["class", "text", 3, "ngStyle", 4, "ngFor", "ngForOf"], ["class", "text nav-item cursor-fill", 3, "ngClass", "ngStyle", "click", 4, "ngFor", "ngForOf"], [1, "text", 3, "ngStyle"], [1, "text", "nav-item", "cursor-fill", 3, "ngClass", "ngStyle", "click"]], template: function ScreenComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, ScreenComponent_div_2_Template, 2, 2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, ScreenComponent_div_3_Template, 2, 5, "div", 3);
@@ -808,7 +432,7 @@ ScreenComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.data.messages);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.data.navItems);
-    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgStyle], styles: [".container[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n\n.vhs-message[_ngcontent-%COMP%] {\n  animation: track 5ms infinite;\n  position: relative;\n  padding: 2em;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n.text[_ngcontent-%COMP%] {\n  font-size: 3.25em;\n  font-weight: bold;\n  left: 0;\n  filter: blur(2.15px);\n  color: #fff;\n  text-shadow: 1px 3px green, -2px -3px red;\n}\n\n.nav-item[_ngcontent-%COMP%]:hover, .selected[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #171DA8;\n  background-clip: border-box;\n  cursor: pointer;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n.vhs-message[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  animation: blur 30ms infinite, flick 50ms infinite, jump 50ms infinite;\n}\n\n@keyframes blur {\n  0% {\n    filter: blur(1px);\n    opacity: 0.8;\n  }\n  50% {\n    filter: blur(1px);\n    opacity: 1;\n  }\n  100% {\n    filter: blur(1px);\n    opacity: 0.8;\n  }\n}\n\n@keyframes flick {\n  50% {\n    left: 2px;\n  }\n  51% {\n    left: 0;\n  }\n}\n\n@keyframes jump {\n  30% {\n    top: 10px;\n  }\n  31% {\n    top: 0;\n  }\n}\n\n@keyframes track {\n  40% {\n    opacity: 1;\n    top: 0;\n    left: 0;\n    transform: scale(1, 1);\n    transform: skew(0, 0);\n  }\n  41% {\n    opacity: 0.8;\n    top: 0px;\n    left: -100px;\n    transform: scale(1, 1.2);\n    transform: skew(50deg, 0);\n  }\n  42% {\n    opacity: 0.8;\n    top: 0px;\n    left: 100px;\n    transform: scale(1, 1.2);\n    transform: skew(-80deg, 0);\n  }\n  43% {\n    opacity: 1;\n    top: 0;\n    left: 0;\n    transform: scale(1, 1);\n    transform: skew(0, 0);\n  }\n}"] });
+    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgStyle], styles: [".container[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n\n.vhs-message[_ngcontent-%COMP%] {\n  animation: track 5ms infinite;\n  position: relative;\n  padding: 2em;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n.text[_ngcontent-%COMP%] {\n  font-size: 3.25em;\n  font-weight: bold;\n  left: 0;\n  filter: blur(2.15px);\n  color: #fff;\n  text-shadow: 1px 3px green, -2px -3px red;\n}\n\n.nav-item[_ngcontent-%COMP%]:hover, .selected[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #171DA8;\n  background-clip: border-box;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n.vhs-message[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  animation: blur 30ms infinite, flick 50ms infinite, jump 50ms infinite;\n}\n\n@keyframes blur {\n  0% {\n    filter: blur(1px);\n    opacity: 0.8;\n  }\n  50% {\n    filter: blur(1px);\n    opacity: 1;\n  }\n  100% {\n    filter: blur(1px);\n    opacity: 0.8;\n  }\n}\n\n@keyframes flick {\n  50% {\n    left: 2px;\n  }\n  51% {\n    left: 0;\n  }\n}\n\n@keyframes jump {\n  30% {\n    top: 10px;\n  }\n  31% {\n    top: 0;\n  }\n}\n\n@keyframes track {\n  40% {\n    opacity: 1;\n    top: 0;\n    left: 0;\n    transform: scale(1, 1);\n    transform: skew(0, 0);\n  }\n  41% {\n    opacity: 0.8;\n    top: 0px;\n    left: -100px;\n    transform: scale(1, 1.2);\n    transform: skew(50deg, 0);\n  }\n  42% {\n    opacity: 0.8;\n    top: 0px;\n    left: 100px;\n    transform: scale(1, 1.2);\n    transform: skew(-80deg, 0);\n  }\n  43% {\n    opacity: 1;\n    top: 0;\n    left: 0;\n    transform: scale(1, 1);\n    transform: skew(0, 0);\n  }\n}"] });
 ScreenComponent = ScreenComponent_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
     (0,src_app_lib_register_component__WEBPACK_IMPORTED_MODULE_0__.registerComponent)({
         selector: 'kr-screen',
@@ -940,6 +564,625 @@ TeleTypeComponent = TeleTypeComponent_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.
 
 /***/ }),
 
+/***/ 9924:
+/*!***************************************!*\
+  !*** ./src/app/layouts/about-page.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "aboutPage": () => (/* binding */ aboutPage)
+/* harmony export */ });
+/* harmony import */ var _shared_layouts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared-layouts */ 900);
+
+const aboutPage = [
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.datetimeScreen,
+    {
+        ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen,
+        data: {
+            ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.data,
+            selectedNav: 'ABOUT'
+        }
+    },
+    {
+        id: "sub-screen-1",
+        selector: "kr-split-view",
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.datetimeScreen.id, _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id],
+            orientation: 'vertical',
+            unit: 'percent',
+            sizes: [50, 50],
+            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
+        }
+    },
+    {
+        id: "sub-screen-2",
+        selector: "kr-split-view",
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.id, 'sub-screen-1'],
+            orientation: 'horizontal',
+            unit: 'pixel',
+            sizes: [400, '*'],
+            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
+        }
+    },
+    {
+        id: 'layout-root',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen.id, 'sub-screen-2'],
+            orientation: 'vertical',
+            unit: 'pixel',
+            sizes: [375, '*'],
+            gutterStyle: { 'background': 'transparent', 'border': '3px solid white', 'filter': 'blur(3px)' }
+        }
+    }
+];
+
+
+/***/ }),
+
+/***/ 9077:
+/*!**************************************!*\
+  !*** ./src/app/layouts/home-page.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "homePage": () => (/* binding */ homePage)
+/* harmony export */ });
+/* harmony import */ var _shared_layouts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared-layouts */ 900);
+
+const appContent1 = [{
+        id: 'bottom-bar',
+        data: {
+            components: [
+                'datetime-screen',
+                'github-screen',
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id
+            ],
+        }
+    }, {
+        id: 'right-content',
+        data: {
+            components: [
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.teletypeScreen.id,
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.venusScreen.id
+            ],
+        }
+    }, {
+        id: 'top-bar',
+        data: {
+            components: [
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar.id,
+                'order-button-2'
+            ],
+        }
+    }];
+const appContent2 = [{
+        id: 'bottom-bar',
+        data: {
+            components: [
+                'datetime-screen',
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id,
+                'github-screen'
+            ],
+        }
+    }, {
+        id: 'right-content',
+        data: {
+            components: [
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.venusScreen.id,
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.teletypeScreen.id
+            ],
+        }
+    }, {
+        id: 'top-bar',
+        data: {
+            components: [
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar.id,
+                'order-button-1'
+            ],
+        }
+    }];
+const homePage = [
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.venusScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.teletypeScreen,
+    {
+        ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen,
+        data: {
+            ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.data,
+            selectedNav: 'HOME'
+        }
+    },
+    {
+        id: 'bottom-bar',
+        selector: 'kr-split-view',
+        data: {
+            components: [
+                'datetime-screen',
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id,
+                'github-screen'
+            ],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [30, 35, 35],
+            disabled: true
+        }
+    },
+    {
+        id: 'datetime-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: [new Date(Date.now()).getTime()],
+            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
+            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
+        }
+    },
+    {
+        id: 'github-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: ['https://github.com/krossi439/kr-layers'],
+            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
+            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
+        }
+    },
+    {
+        id: 'order-button-2',
+        selector: 'kr-action-button',
+        data: {
+            action: 'UpsertComponentStates',
+            props: appContent2,
+            label: '↔️',
+            "buttonStyle": { "font-size": "2em", "font-weight": "600", "color": "yellow" },
+            tooltip: "Swap Order"
+        }
+    },
+    {
+        id: 'order-button-1',
+        selector: 'kr-action-button',
+        data: {
+            action: 'UpsertComponentStates',
+            props: appContent1,
+            label: '↔️',
+            "buttonStyle": { "font-size": "2em", "font-weight": "600", "color": "yellow" },
+            tooltip: "Swap Order"
+        }
+    },
+    {
+        id: 'right-content',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.venusScreen.id, _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.teletypeScreen.id],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [50, 50],
+            disabled: true
+        }
+    },
+    {
+        id: 'center-content',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.id, 'right-content'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [30, 70],
+            disabled: true
+        }
+    },
+    {
+        id: "top-bar",
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar.id, 'order-button-1'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [90, 10],
+            disabled: true
+        }
+    },
+    {
+        id: 'layout-root',
+        selector: 'kr-split-view',
+        data: {
+            components: ['top-bar', 'center-content', 'bottom-bar'],
+            orientation: 'vertical',
+            unit: 'pixel',
+            sizes: [64, '*', 64],
+            disabled: true
+        }
+    }
+];
+
+
+/***/ }),
+
+/***/ 2556:
+/*!****************************************!*\
+  !*** ./src/app/layouts/quad-screen.ts ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "quadPage": () => (/* binding */ quadPage)
+/* harmony export */ });
+/* harmony import */ var _shared_layouts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared-layouts */ 900);
+
+const quadPage = [
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.datetimeScreen,
+    {
+        ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen,
+        data: {
+            ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.data,
+            selectedNav: 'QUAD'
+        }
+    },
+    {
+        id: 'left-content',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.id, _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id],
+            orientation: 'vertical',
+            unit: 'pixel',
+            sizes: ['*', 350],
+            disabled: true,
+            editing: true
+        }
+    },
+    {
+        id: 'right-content',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen.id, _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.datetimeScreen.id],
+            orientation: 'vertical',
+            unit: 'pixel',
+            sizes: ['*', 350],
+            disabled: true,
+            editing: true
+        }
+    },
+    {
+        id: 'layout-root',
+        selector: 'kr-split-view',
+        data: {
+            components: ['left-content', 'right-content'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [30, 70],
+            disabled: true,
+            editing: true
+        }
+    }
+];
+
+
+/***/ }),
+
+/***/ 900:
+/*!*******************************************!*\
+  !*** ./src/app/layouts/shared-layouts.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "appBar": () => (/* binding */ appBar),
+/* harmony export */   "creditScreen": () => (/* binding */ creditScreen),
+/* harmony export */   "datetimeScreen": () => (/* binding */ datetimeScreen),
+/* harmony export */   "logoScreen": () => (/* binding */ logoScreen),
+/* harmony export */   "navScreen": () => (/* binding */ navScreen),
+/* harmony export */   "teletypeScreen": () => (/* binding */ teletypeScreen),
+/* harmony export */   "venusScreen": () => (/* binding */ venusScreen)
+/* harmony export */ });
+const logoScreen = {
+    id: 'logo-screen',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            `
+        ██╗░░░░░░█████╗░██╗░░░██╗███████╗██████╗░░██████╗
+        ██║░░░░░██╔══██╗╚██╗░██╔╝██╔════╝██╔══██╗██╔════╝
+        ██║░░░░░███████║░╚████╔╝░█████╗░░██████╔╝╚█████╗░
+        ██║░░░░░██╔══██║░░╚██╔╝░░██╔══╝░░██╔══██╗░╚═══██╗
+        ███████╗██║░░██║░░░██║░░░███████╗██║░░██║██████╔╝
+        ╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═════╝░`,
+            `
+        █▀ ▀█▀ ▄▀█ ▀█▀ █▀▀  █▀▄ █▀█ █ █░█ █▀▀ █▄░█  █░█ █
+        ▄█ ░█░ █▀█ ░█░ ██▄  █▄▀ █▀▄ █ ▀▄▀ ██▄ █░▀█  █▄█ █`
+        ],
+        textStyle: { 'font-size': '1.5em', 'white-space': 'break-spaces' }
+    }
+};
+const venusScreen = {
+    id: 'venus-screen',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            `
+            ▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓█▀▀███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▀░░▒▒░░    '░░░,,"▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀▒▒▒▒░░,░░▒░░        ╙▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓█▒▐╣▒╣▒░░░▒╖░▒─;╓,,  '░▒╓░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▐▒▒▒░▒▓▓▄▒╢╜▒░░░      ╙▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▌▓▓▒╙▓▓▒╢D%▒K╣▒▒░░        ░▄H▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▌▒╢▓▓▓▓▓█▓▓▓▓▒▒▒░        ,,░╫τ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓╣╣▒æ@Ñ▓███╖ ]▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀████▓▓▓▓▓███▓▀▀██▓▒ ▒▒▀╟▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓█▓╬▓▓██▓███▓▓▓▒▒╜╜╜╙ ░▒▓▓    ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▓▓▓╣▒▒░░,░░▓▄▄▄▄@░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▒▒░░████▌░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓████▓╢▓▓▓▓▓▓▓╣╣▒████▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀╣╢╫▓▓▓▓▓▓╣▒╟▓▓█▓░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒▒╢╢▓▓▓▓▓╣╣▒░╖p╖▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█║╢▒▒╫▓▓▓▓▓▓▓██▓▓░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░║▓▓▓▓▓╣╢╢▓▓▓██▒░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒╫▓▓▓████████╣▒▒░"▀▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▓▓███████▓▓╣▒░░      '▀▀▓▓▓▓▓▓▀▀'"▀░▀▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░▒╫▓▓█████▓▓▒▒▒░░           ░ ░░░░░░░░░'░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢▓▓████▓▓▓╣▒▒▒░░            ░░░░░░░░░░░ ░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████▓╣▒▒▒▒░              ░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓▒▒░░░░░░░   ░          ░░░░░░░░░░▒╬╣▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓█▀▒▒╢▓▓▓▓▓╢╫▓▒▒▒╜╜╜▒▒░░   ░░░ ░░            ░░░░░░░░▒▒▒╣▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓█▀░░░░░░▒▒▒▒▒▒▒▒▒▒▒░░░                         ░░░  ░░░░▒▒▓╣▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓█ ▒░░░░░░░░░░░▒▒░▒░░░░░░░ ░░      ░░     ░░   ░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▌░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░ ░     ,   ░░░░░░░ ░░░░░░░░░▒▒▒▒╣▓╢▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓█░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░     ░   ░░░░░░░░░░░░░░░░░▒▒║╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▌▒▒▒▒▒▒▒░░░░░░▒▒▒▒░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░░ ░░░░░░░▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▌▒▒▒▒▒▒▒▒░░ ░░▓▓▒▒▒▒▒▒░░░░░░       ░░░░░░░░░░▒░░░░░░░░░░░░░▒▒╢╫▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▌▒▒▒▒▒▒▒▒░░░░░╙█▓▓╢▒▒▒▒░░░              ░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓█▒▒▒▒▒▒▒▒░░░░░  ▀█▓▓╣▒▒░░░░░░░  ░░    ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╢╬╣╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓░▒╣╢▒▒▒▒░░░░   ░ ▐▓╣╣▒▒░░░░░░░░░░░░░░░░░░▒▒╢╢╣╢╣╢╢╢▒▒╢╢╢╢▓▓▓▓╣▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▌▒╢╢╣▒▒▒▒▒░░░     ▓▓▓▓▒@@▒▒▒▒▒░▒▒░░░▒▒▒▒▒▒▒╢╫▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓╣╫▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▒▒▒▒╣▒▒▒▒@░░    '└▓▓███▓▓▓▓╢▒▒▒╢▒▒▒▒▒▒▒▒▒▒▒╫▓▓▓▓▓▓▓▓▓██▓█▓▓▓╣╫▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▒▒▒╢▒▒▒▒░░░░ ,,░░╠████████▓▓▓▓▓▓▓▓▓╣▒▒▒▒▒▒▒▒╢▓▓▓████████▓╣╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▌▒╢╢╢▒▒▒▄▓█████████████████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒╜╜▒▓▓▓▓▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▒╢╢▓▓█████████████████████████▓▒▒░░░░▒▒▒░░░░░░░░░▒░░▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▒██████████████╢▓▓▓▓▓▓████▓╣▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓████████████░╢╢╢▓▓▓▓▓█▓▓╣╢╣╢╢╢╣╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓█████▓╢╢▓▓░▒▒╢╫▓▓▓▓▓▓▓▓▓▓╢╣╣╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌▒▒╢╢▓▓▓▓▓▓▓▓▓╣╢╢╣╣╢╢▒╣▒▒╢╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢╢╢╢╢╢╢╢╣╣╢╣╢╢╣╢╢╢╢╢╣╢╢╢╢╣╢▒▒▒╢╢╢╢╢▒▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▒╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓╣▓▓╣╢╢╢╢╢╣╢╢╢╢╢╢╢╣╣╢▒▒▒▒╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒╢╫▓▓▓▓╣╣▒╢╢╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╢╢╢╢╢╣╣╢╢╢▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒░▒▒▒▒▒▒▒░▒░░░░░▒▒▒░░▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░▒▒▒▒▒▒░░▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ░░░░░░░░░░░░▒░░░░,░░░░▒╫▓▓▒▒▒▒░░░░░░▒▒▒▒▒▒░░░▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ ░░░░░░░░▒▒▒▒▒▒▒▒░░░░      ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒░░ ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒╣▒╢▒╢╢▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒░░░░░░░▒▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓▌ ░░▒▒▒╢╢╢╣╢╢╣╢╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░▒▒▒▒╢╢╢╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▓▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▓░░░▒▒▒▒▒▒▒▒╢╢╢╢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒╫▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓▌░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░░░▒▒▒╫▓▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓▌░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░▒▒",,░░▒▒@▒▒╢ ░░░,░▒╫▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░╓╖░░░░░░╓╜░,m╜░░░▒▒▒▒▒▒╣▒▒▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒╖╫▓▓▓▓▓▓"░░▒░░░░░m░░▒░▒▒░░╢╢╜▒▒▄▓▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░╜╩╨╜░░░░╖░░░▒ÑÑ▓▓▓Ñ╝░░▒@░░░░░░░▒▒▒░░░░░▒▄@▓▓▒▒█▓▓▓▓▓▓
+            ▓▓▓▓▓▓▓▓▓░▒▒▒▒▒▒▒▒▒▒▒▒@@▒╖░▒▒▒▒▒▒▒▄█▄▄▄████▓▓░▒▒╟▒▒▒▒▒░░▒▒░░░▓@g╣▓▒▒▓██▀▀╜║▒▒▓▓▓
+            ▓▓▓▓▓▓▓░▒░'""╙╜╝╝╨▒▓╢@╝▒░▄▄▄█████▀▓▓▓▓▀▓╢▒▒▒▒▒▒╜▒@╜▒▒▒▒░░░░░ ▐▓▓▓█▀▀░▒╢╢╬▓▓@▓▓▓▓
+            ▓▓▓▓▓▓ ░░░░▒▄▄▓▄▓@░░░╓▓▓▓██▀█▓████▓▓╣▓▒▒▓▓█▒▒╢░▒░▒╫▓▓▓░░░░░░░░▒▄▄▄▄▄▄▄▄▄██▓▓█▓▓▓
+            ▓▓▓▓▓█████████▓▒╢▒▒█▓▓▓▄▄█████▓▓▓████▓▄▓▓▓█▓▓╝╜▒▒░░░░░░░░ ░░░░░▀▀▀▀▀█████████▓▓▓
+            ▓▓▓▓▓▓▓▓▓█▓▓▓▓▓██████▓██▀▓╣▒▒▒▒▒▒╢▒▓▓▓▒▒▒▓▒░░▒▒▒░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒██╢╢▓▓▓
+            ▓▓▓▓▓▓▌▒╢╫▓▓▓▓▓█████▀▒▒▒▒▒▒▒▓▓█████╢▓╣╣▒╣▒▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒╢╢▒█▓▓▓▓▓
+            ▓▓▓▓▓▓▒▒▒╢▓▓▓▓▓▓▓▓▓▓▓▓▓╣▓▓▓█████▓▓╣▓▓▓╣▒▒▒▒╣░▒▒▒▒▒▒▒▒░▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢▓▓▓▓▓▓
+            ▓▓▓▓▓▓▒▒╢╢▓▓▓▓▓▒╢▓▓▓██████████▓╣▓▓▓▓▓▓▒▒▒▒╣▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢╢╣╢╢╢▓▓▓▓▓▓
+            ▓▓▓▓▓▒▒▒▒▒▒╢╢▒▓█████████████▓▓▒▓▓▓▓▓▓▒╢▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒╢▒╫╣▓▓▓▓▓▓
+            ▀▀▀▀╩╩╩╩╩▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀╩╝╝╩╝╩╩╩╩╝╩╝╨╨╨╨╨╨╨╨╨╨╨╨╨╨╜╝╩╩╩╝╝╝╩╩╩▀▀▀▀▀▀`
+        ],
+        textStyle: { 'font-size': '7px', 'white-space': 'break-spaces' }
+    }
+};
+const navScreen = {
+    id: 'nav-screen',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            'NAVIGATION:'
+        ],
+        navItems: [
+            'HOME',
+            'WAVES',
+            'ABOUT'
+        ],
+        textStyle: { "font-size": "2em", "margin": "0.5em 0", "white-space": "no-wrap" }
+    }
+};
+const creditScreen = {
+    id: 'credit-screen',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            'Kayla Rossi'
+        ],
+        containerStyle: { "justify-content": "center" },
+        textStyle: { "margin": "0.5em 0", "line-break": "anywhere", "font-weight": "bolder" }
+    }
+};
+const datetimeScreen = {
+    id: 'datetime-screen',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            new Date(Date.now()).toISOString(),
+            'https://github.com/krossi439/kr-layers'
+        ],
+        textStyle: { "font-size": "2em", "margin": "0.5em 0" }
+    }
+};
+const appBar = {
+    id: 'appbar',
+    selector: 'kr-screen',
+    data: {
+        messages: [
+            `█░░ ▄▀█ █▄█ █▀▀ █▀█ █▀
+ █▄▄ █▀█ ░█░ ██▄ █▀▄ ▄█`
+        ],
+        containerStyle: { 'margin': '0', "justify-content": "center" },
+        textStyle: { "font-weight": "bolder", "padding-left": "20px", "font-size": "1em", "white-space": "break-spaces" }
+    }
+};
+const teletypeScreen = {
+    id: 'terminal-screen',
+    selector: 'kr-tele-type',
+    data: {
+        messages: [
+            'And if I only could',
+            'I\'d make a deal with God',
+            'And I\'d get him to swap our places',
+            '',
+            'Be running up that road',
+            'Be running up that hill',
+            'Be running up that building'
+        ],
+        textStyle: { "font-size": "1.75em" }
+    }
+};
+
+
+/***/ }),
+
+/***/ 5701:
+/*!***************************************!*\
+  !*** ./src/app/layouts/waves-page.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "wavesPage": () => (/* binding */ wavesPage)
+/* harmony export */ });
+/* harmony import */ var _shared_layouts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared-layouts */ 900);
+
+const wavesPage = [
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar,
+    _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.logoScreen,
+    {
+        id: 'credit-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: [
+                'Isometric Synthwave - The Great Wave off Kanagawa',
+                ', Mike Airlino'
+            ],
+            containerStyle: { "justify-content": "center", "flex-direction": "row" },
+            textStyle: { "font-size": "1.33em", "font-weight": "bolder" }
+        }
+    },
+    {
+        id: 'image-screen',
+        selector: 'kr-image',
+        data: {
+            src: 'assets/images/synthwave-kanagawa.png',
+            imgStyle: {
+                height: "100%",
+                width: "100%",
+                background: "linear-gradient(rgb(72,0,72,0.8), rgb(192,72,72,0.8))",
+                "background-size": "cover",
+                "background-repeat": "no-repeat",
+                "mix-blend-mode": "plus-lighter"
+            },
+            containerStyle: {
+                height: "100%",
+                display: "flex",
+                "align-items": "center",
+                padding: "1em"
+            }
+        }
+    },
+    {
+        ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen,
+        data: {
+            ..._shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.data,
+            selectedNav: 'WAVES'
+        }
+    },
+    {
+        id: 'bottom-bar',
+        selector: 'kr-split-view',
+        data: {
+            components: [
+                'datetime-screen',
+                _shared_layouts__WEBPACK_IMPORTED_MODULE_0__.creditScreen.id
+            ],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [15, 85],
+            disabled: true
+        }
+    },
+    {
+        id: 'datetime-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: [new Date(Date.now()).getTime()],
+            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
+            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
+        }
+    },
+    {
+        id: 'github-screen',
+        selector: 'kr-screen',
+        data: {
+            messages: ['https://github.com/krossi439/kr-layers'],
+            containerStyle: { 'margin': '0', "padding": "0", "flex-direction": "row", "align-items": "center" },
+            textStyle: { "font-size": "1.5em", "display": "flex", "padding": "0 20px" }
+        }
+    },
+    {
+        id: 'center-content',
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.navScreen.id, 'image-screen'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [15, 85],
+            disabled: true
+        }
+    },
+    {
+        id: "top-bar",
+        selector: 'kr-split-view',
+        data: {
+            components: [_shared_layouts__WEBPACK_IMPORTED_MODULE_0__.appBar.id, 'github-screen'],
+            orientation: 'horizontal',
+            unit: 'percent',
+            sizes: [50, 50],
+            disabled: true
+        }
+    },
+    {
+        id: 'layout-root',
+        selector: 'kr-split-view',
+        data: {
+            components: ['top-bar', 'center-content', 'bottom-bar'],
+            orientation: 'vertical',
+            unit: 'pixel',
+            sizes: [64, '*', 64],
+            disabled: true
+        }
+    }
+];
+
+
+/***/ }),
+
 /***/ 955:
 /*!**************************************************************!*\
   !*** ./src/app/lib/action-button/action-button.component.ts ***!
@@ -970,7 +1213,6 @@ let ActionButtonComponent = ActionButtonComponent_1 = class ActionButtonComponen
     ngOnInit() {
     }
     dispatch() {
-        console.log(this.data.props);
         this.store.dispatch((0,_store_component_state_actions__WEBPACK_IMPORTED_MODULE_1__.upsertComponentStates)({ componentStates: this.data.props }));
     }
 };
@@ -1430,8 +1672,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ 8555);
 /* harmony import */ var _ngrx_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/entity */ 4629);
 /* harmony import */ var _component_state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component-state.actions */ 2007);
-/* harmony import */ var src_app_app_layouts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-layouts */ 2095);
-/* harmony import */ var _utils_deep_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/deep-merge */ 9846);
+/* harmony import */ var _utils_deep_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/deep-merge */ 9846);
+/* harmony import */ var src_app_layouts_home_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/layouts/home-page */ 9077);
 
 
 
@@ -1440,12 +1682,12 @@ __webpack_require__.r(__webpack_exports__);
 const componentStatesFeatureKey = 'componentStates';
 const adapter = (0,_ngrx_entity__WEBPACK_IMPORTED_MODULE_3__.createEntityAdapter)();
 const entities = {};
-src_app_app_layouts__WEBPACK_IMPORTED_MODULE_1__.homePage.forEach((c) => entities[c.id] = c);
+src_app_layouts_home_page__WEBPACK_IMPORTED_MODULE_2__.homePage.forEach((c) => entities[c.id] = c);
 const initialState = adapter.getInitialState({
-    ids: src_app_app_layouts__WEBPACK_IMPORTED_MODULE_1__.homePage.map((c) => c.id),
+    ids: src_app_layouts_home_page__WEBPACK_IMPORTED_MODULE_2__.homePage.map((c) => c.id),
     entities
 });
-const reducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.addComponentState, (state, action) => adapter.addOne(action.componentState, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.upsertComponentState, (state, action) => adapter.upsertOne(action.componentState, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.addComponentStates, (state, action) => adapter.addMany(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.upsertComponentStates, (state, action) => adapter.upsertMany(action.componentStates.map((c) => (0,_utils_deep_merge__WEBPACK_IMPORTED_MODULE_2__.deepMerge)(state.entities[c.id], c)), state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.updateComponentState, (state, action) => adapter.updateOne({ id: action.componentState.id, changes: (0,_utils_deep_merge__WEBPACK_IMPORTED_MODULE_2__.deepMerge)(state.entities[action.componentState.id], action.componentState.changes) }, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.updateComponentStates, (state, action) => adapter.updateMany(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.deleteComponentState, (state, action) => adapter.removeOne(action.id, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.deleteComponentStates, (state, action) => adapter.removeMany(action.ids, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.loadComponentStates, (state, action) => adapter.setAll(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.clearComponentStates, state => adapter.removeAll(state)));
+const reducer = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.createReducer)(initialState, (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.addComponentState, (state, action) => adapter.addOne(action.componentState, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.upsertComponentState, (state, action) => adapter.upsertOne(action.componentState, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.addComponentStates, (state, action) => adapter.addMany(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.upsertComponentStates, (state, action) => adapter.upsertMany(action.componentStates.map((c) => (0,_utils_deep_merge__WEBPACK_IMPORTED_MODULE_1__.deepMerge)(state.entities[c.id], c)), state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.updateComponentState, (state, action) => adapter.updateOne({ id: action.componentState.id, changes: (0,_utils_deep_merge__WEBPACK_IMPORTED_MODULE_1__.deepMerge)(state.entities[action.componentState.id], action.componentState.changes) }, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.updateComponentStates, (state, action) => adapter.updateMany(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.deleteComponentState, (state, action) => adapter.removeOne(action.id, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.deleteComponentStates, (state, action) => adapter.removeMany(action.ids, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.loadComponentStates, (state, action) => adapter.setAll(action.componentStates, state)), (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.on)(_component_state_actions__WEBPACK_IMPORTED_MODULE_0__.clearComponentStates, state => adapter.removeAll(state)));
 const { selectIds, selectEntities, selectAll, selectTotal, } = adapter.getSelectors();
 const componentStateFeature = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.createFeatureSelector)("components");
 const selectComponentEntities = (0,_ngrx_store__WEBPACK_IMPORTED_MODULE_4__.createSelector)(componentStateFeature, (state) => state.entities);
