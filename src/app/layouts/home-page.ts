@@ -2,14 +2,6 @@ import { SplitViewData } from "../lib/split-view/split-view.component";
 import { ComponentState } from "../lib/store/component-state.model";
 import { creditScreen, teletypeScreen, venusScreen, appBar, logoScreen, navScreen } from "./shared-layouts";
 
-const imageScreen = {
-    id: 'image-screen',
-    selector: 'app-image',
-    data: {
-        src: ''
-    }
-}
-
 const appContent1: Partial<ComponentState<Partial<SplitViewData>>>[] = [{
     id: 'bottom-bar',
     data: {

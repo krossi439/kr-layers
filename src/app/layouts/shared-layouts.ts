@@ -108,10 +108,11 @@ export const navScreen = {
     selector: 'kr-screen',
     data: {
         messages: [
-            'CHOOSE CONFIGURATION:'
+            'NAVIGATION:'
         ],
         navItems: [
             'HOME',
+            'WAVES',
             'ABOUT'
         ],
         textStyle: { "font-size": "2em", "margin": "0.5em 0", "white-space": "no-wrap" }

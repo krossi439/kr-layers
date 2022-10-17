@@ -1,10 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { registerComponent } from 'src/app/lib/register-component';
 
 interface ImageData {
   src: string;
-  imgStyle: Record<string, string>
+  imgStyle: Record<string, string>,
+  containerStyle: Record<string, string>
 }
 
+@registerComponent({
+  selector: 'kr-image',
+  componentClass: ImageComponent
+})
 @Component({
   selector: 'kr-image',
   templateUrl: './image.component.html',
